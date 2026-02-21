@@ -1,0 +1,241 @@
+📱 Mobile App Concept Description
+App Name: Wizmo Quiz
+Overview
+
+Wizmo Quiz is an offline educational quiz game for kids (ages 9–13).
+The app helps children learn and practice words, numbers, colors, logic, and general knowledge through short, fun quiz sessions guided by a friendly cartoon character named Wizmo.
+
+The entire app works 100% offline.
+No backend server is required for the first MVP.
+
+🎭 Main Character: Wizmo
+
+Name: Wizmo
+
+Role: Friendly quiz guide / teacher
+
+Personality: Curious, smart, encouraging, playful
+
+Behavior:
+
+Introduces quizzes
+
+Reacts to correct/incorrect answers
+
+Encourages kids to try again
+
+Celebrates progress
+
+Wizmo appears:
+
+On the home screen
+
+Before and after quizzes
+
+During feedback moments (correct / wrong answers)
+
+🧠 Core Learning Content
+Learning Categories (MVP)
+
+Vocabulary (words & meanings)
+
+Numbers & basic math
+
+Colors
+
+Logic & simple reasoning
+
+Mixed quiz mode
+
+Each category contains multiple questions with increasing difficulty.
+
+📦 Offline-First Architecture (VERY IMPORTANT)
+No Backend / No Internet Required
+
+All questions, answers, and metadata are stored locally
+
+All images and assets are bundled inside the app
+
+App works without:
+
+Login
+
+Accounts
+
+Internet connection
+
+Cloud database
+
+📄 Data Structure
+Questions & Answers
+
+Stored in local JSON files
+
+One JSON file per category (recommended)
+
+Example JSON structure:
+{
+  "category": "Vocabulary",
+  "level": 1,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does the word 'happy' mean?",
+      "options": [
+        "Feeling sad",
+        "Feeling angry",
+        "Feeling good",
+        "Feeling tired"
+      ],
+      "correctAnswerIndex": 2,
+      "image": "happy.png"
+    }
+  ]
+}
+
+Images
+
+Stored in the app’s local assets folder
+
+Referenced by filename in JSON
+
+No remote image loading
+
+🎮 Gameplay Flow
+Home Screen
+
+Wizmo welcomes the player
+
+Category selection buttons
+
+Progress indicator (stars, levels, score)
+
+Quiz Session
+
+Wizmo introduces the quiz
+
+Question appears (text + optional image)
+
+3–4 multiple-choice answers
+
+Timer (optional for MVP)
+
+Player selects an answer
+
+Feedback
+
+Correct:
+
+Wizmo celebrates
+
+Sound + animation
+
+Incorrect:
+
+Wizmo gives encouragement
+
+Shows correct answer
+
+End of Quiz
+
+Score summary
+
+Stars or points earned
+
+Encouraging message from Wizmo
+
+🏆 Progress & Storage
+
+Progress saved locally using:
+
+SharedPreferences / local storage
+
+Tracks:
+
+Completed levels
+
+Scores
+
+Stars earned
+
+No cloud sync in MVP
+
+🎨 Visual & UX Style
+
+Bright, kid-friendly colors
+
+Large buttons
+
+Simple text
+
+Clear icons
+
+Friendly animations
+
+Wizmo always visible or easily accessible
+
+🔊 Audio (Optional for MVP)
+
+Button click sounds
+
+Correct / wrong answer sounds
+
+Short Wizmo reactions (non-verbal or simple phrases)
+
+📢 Monetization (Later Phase)
+
+Ads disabled in MVP
+
+Architecture allows adding:
+
+Interstitial ads
+
+Rewarded ads
+
+Ads only shown between quiz sessions (never mid-question)
+
+🛠 Technical Notes (for the AI)
+
+Platform: Android (first)
+
+Framework: Flutter / Unity / Native (AI can choose)
+
+State management: simple local state
+
+No authentication
+
+No network permissions required
+
+JSON parsing for quiz content
+
+Asset-based image loading
+
+🎯 MVP Goals
+
+Fully playable offline
+
+Stable and fast
+
+Easy to expand by:
+
+Adding new JSON files
+
+Adding new images
+
+Adding new categories
+
+Designed to scale later with backend if needed
+
+✅ Key Constraints (DO NOT IGNORE)
+
+Offline only
+
+No backend
+
+Local JSON for questions
+
+Local images
+
+Kid-friendly UX
+
+Wizmo is central to the experience

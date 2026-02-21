@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 100% 97%; /* #f0f8ff (AliceBlue-ish) */
+  --foreground: 222 47% 11%;
+  
+  --primary: 210 100% 65%;    /* Wizmo Blue */
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 47 100% 62%;   /* Wizmo Yellow */
+  --secondary-foreground: 30 80% 20%;
+  
+  --accent: 128 50% 60%;      /* Wizmo Green */
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 350 80% 60%;
+  --destructive-foreground: 0 0% 98%;
+  
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 210 100% 65%;
+  
+  --radius: 1rem;
+
+  /* Custom Font Variables */
+  --font-display: 'Fredoka', cursive;
+  --font-body: 'Quicksand', sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(77, 166, 255, 0.1) 0%, transparent 20%),
+      radial-gradient(circle at 90% 80%, rgba(255, 217, 61, 0.15) 0%, transparent 20%),
+      radial-gradient(circle at 50% 50%, rgba(107, 203, 119, 0.05) 0%, transparent 40%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-semibold tracking-tight;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.btn-press {
+  @apply transition-transform active:scale-95;
+}
+
+.card-pop {
+  @apply transition-all hover:-translate-y-1 hover:shadow-xl duration-300;
+}
